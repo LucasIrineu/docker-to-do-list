@@ -3,7 +3,6 @@ EXPOSE 3001
 WORKDIR /app
 COPY ['node_modules.tar.gz', '.']
 COPY ['./src', './src']
-COPY ['package-lock.json', './']
-COPY ['package.json', './']
+COPY ['package-lock.json', 'package.json', './']
 RUN npm install
 ENTRYPOINT ['npm', 'start']
